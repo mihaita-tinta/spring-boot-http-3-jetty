@@ -19,7 +19,7 @@ public class AddResponseHeaderFilter implements Filter {
 
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         httpServletResponse.setHeader(
-                "Alt-Svc", "h3=\":" + serverPort + "\"; ma=86400; persist=1");
+                "Alt-Svc", "h3=\":" + serverPort +"\"; ma=2592000,h3-29=\":" + serverPort +"\"; ma=2592000");
         chain.doFilter(request, response);
     }
 }

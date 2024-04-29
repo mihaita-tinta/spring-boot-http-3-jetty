@@ -15,3 +15,10 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 
+
+```shell
+keytool -genkeypair -alias http3.demo -keyalg RSA -keysize 2048 -storetype PKCS12 -storepass changeit -keystore keystore.p12 -validity 3650
+keytool -genkey -alias http3.demo -storetype PKCS12 -keyalg RSA -keypass changeit -storepass changeit -keystore keystore.p12
+keytool -export -alias http3.demo -storepass changeit -file server.cer -keystore keystore.jks
+keytool  -importcert  -keystore trust.jks
+```
